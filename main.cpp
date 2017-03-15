@@ -82,4 +82,5 @@ int main(){
 	vector<int> a2 = {1,2};
 	double m12 = findMedianSortedArrays(a1, a2);
 	printf("Median = %0.2f\n", m12);
+
 }
