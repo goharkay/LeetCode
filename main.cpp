@@ -77,10 +77,24 @@ int main(){
 	printf("Median = %0.3f \n", md);
 	*/
 
+	/*
 	// Find median of single sorted array
-	vector<int> a1 = {1,1};
-	vector<int> a2 = {1,2};
+	vector<int> a1 = {1,2};
+	vector<int> a2 = {3,4};
 	double m12 = findMedianSortedArrays(a1, a2);
 	printf("Median = %0.2f\n", m12);
+	*/
+
+	vector<int> a1 = {3, 1, 7, 5,4, 6, 9, 2};
+	a1 = myBubbleSort(a1);
+	for (uint i = 0; i < a1.size(); i ++)
+	{
+		cout << a1[i] << " ";
+	}
+	cout << endl;
+
+	vector<int> n1 = {1, 2};
+	vector<int> n2 = {3, 4};
+	printf("Medain = %0.2f\n", findMedianSortedArrays(n1, n2));
 
 }

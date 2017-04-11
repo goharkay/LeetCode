@@ -11,7 +11,8 @@ using namespace std;
 
 
 // Two Sum
-vector<int> twoSum(vector<int>& nums, int target){
+vector<int> twoSum(vector<int>& nums, int target)
+{
 	int vSize = nums.size();
 	for (int i = 0; i < vSize; i++ ){
 		for (int j = i+1; j < vSize; j++){
@@ -80,6 +81,29 @@ int lengthOfLongestSubstring(string s)
 	cout << maxStr << endl;
 	return maxLen;
 }
+
+vector<int> myBubbleSort(vector<int>& inp)
+{
+	int len = inp.size();
+	int newlen;
+	do
+	{
+		newlen = 0; // set it 0 here, we'll change it once we go inside loop
+		for (int i = 1; i < len; i++)
+		{
+			if(inp[i-1] > inp[i]) // swap and change newlen value
+			{
+				int tmp = inp[i-1];
+				inp[i-1] = inp[i];
+				inp[i] = tmp;
+				newlen = i;
+			}
+		}
+		len = newlen;
+	} while(newlen != 0);
+	return inp;
+}
+
 double findMedianSorted(vector<int>& myVec)
 {
 	double median;
@@ -102,12 +126,10 @@ double findMedianSorted(vector<int>& myVec)
 
 double findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2)
 {
-	if (nums1.size() ==0)
-		return findMedianSorted(nums2);
-	else if(nums2.size() == 0)
-		return findMedianSorted(nums1);
-	else
-		return (findMedianSorted(nums1) + findMedianSorted(nums2))/2;
+	nums1.insert(nums1.end(), nums2.begin(), nums2.end());
+	nums1 = myBubbleSort(nums1);
+	double med = findMedianSorted(nums1);
+	return med;
 
 }
 

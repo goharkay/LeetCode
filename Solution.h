@@ -20,6 +20,7 @@
 	std::vector<int> twoSum(std::vector<int>& nums, int target);
 	LinkedList* addTwoNumbers(LinkedList* l1, LinkedList* l2);
 	int lengthOfLongestSubstring(string s);
+	vector<int> myBubbleSort(vector<int>& inp);
 	double findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2);
 	double findMedianSorted(vector<int>& myVec);
 //};
